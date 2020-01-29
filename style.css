@@ -87,7 +87,6 @@ header {
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     cursor: pointer;
-    
 }
 
 @keyframes zoom {
@@ -96,7 +95,7 @@ header {
     }
 
     50% {
-        transform: scale(1.1)
+        transform: scale(1.05)
     }
 
     100% {
