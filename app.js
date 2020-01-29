@@ -3,10 +3,14 @@ let compScore = 0;
 const userScore_span = document.getElementById("user-score");
 const compScore_span = document.getElementById("comp-score");
 const scoreBoard = document.querySelector(".scores");
-const result = document.querySelector(".text-two");
+const result = document.getElementById("text");
 const fire = document.getElementById("f");
 const water = document.getElementById("w");
 const grass = document.getElementById("g");
+
+function word(letter) {
+  return letter === "f" ? "Fire" : letter === "w" ? "Water" : "Grass";
+} 
 
 function getCompChoice() {
     const choices = ['f', 'w' ,'g'];
@@ -14,14 +18,40 @@ function getCompChoice() {
     return choices[randNum];
 }
 
-function win() {
-    
+function win(userChoice, compChoice) {
+    userScore++;
+    userScore_span.innerHTML = userScore;
+    compScore_span.innerHTML = compScore;
+    result.innerHTML = word(userChoice) + " beats " + word(compChoice) + " You win!";
+    if (userChoice === "f") {
+      result.style.color="red";
+    }
+    if (userChoice === "g") {
+      result.style.color = "green";
+    }
+    if (userChoice === "w") {
+      result.style.color = "blue";
+    }
 }
 
-function lose() {
+function lose(userChoice, compChoice) {
+  compScore++;
+  compScore_span.innerHTML = compScore;
+  userScore_span.innerHTML = userScore;
+  result.innerHTML = word(compChoice) + " beats " + word(userChoice) + " You lose!";
+  if (userChoice === "f") {
+    result.style.color = "blue";
+  }
+  if (userChoice === "g") {
+    result.style.color = "red";
+  }
+  if (userChoice === "w") {
+    result.style.color = "green";
+  }
 }
 
-function draw() {
+function draw(userChoice, compChoice) {
+  result.innerHTML = "It's a draw";
 }
 
 function game(userChoice) {
@@ -30,17 +60,17 @@ function game(userChoice) {
         case "fg":
         case "wf":
         case "gw":
-            win();
+        win(userChoice, compChoice);
             break;
         case "fw":
         case "wg":
         case "gf":
-            lose();
+        lose(userChoice, compChoice);
             break;
         case "ff":
         case "ww":
         case "gg":
-            draw();
+        draw(userChoice, compChoice);
             break;
     }
 }
