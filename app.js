@@ -98,3 +98,12 @@ function main() {
 }
 
 main();
+
+$(document).ready(function () {
+  $(".pop-up").click(function() {
+    $('.message').show();
+  });
+  $(".message").click(function() {
+    $('.message').hide();
+  });
+})
