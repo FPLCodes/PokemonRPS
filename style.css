@@ -87,6 +87,8 @@ header {
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     cursor: pointer;
+    border: 3px solid rgb(77, 74, 74);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
 }
 
 @keyframes zoom {
@@ -117,4 +119,19 @@ header {
     font-size: 45px;
     margin-bottom: -50px;
     color: rgb(1, 255, 255);
+}
+
+.correct {
+    border: 3px solid rgb(40, 134, 40);
+    box-shadow: 0 0 6px green;
+}
+
+.wrong {
+    border: 3px solid rgb(207, 61, 61);
+    box-shadow: 0 0 6px rgb(240, 37, 37);
+}
+
+.draw {
+    border: 3px solid rgb(192, 192, 192);
+    box-shadow: 0 0 6px rgb(189, 189, 189);
 }
