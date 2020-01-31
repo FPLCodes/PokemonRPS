@@ -195,10 +195,8 @@ header {
     position: relative;
     border-radius: 5px;
     padding: 20px 3%;
-}
-
-.message > ul {
-    justify-self: center;
+    list-style-type: none;
+    text-align: center;
 }
 
 .closeBtn {
@@ -221,4 +219,24 @@ header {
 
 .closeBtn:hover {
     background-color: rgb(255, 255, 255);
+}
+
+@media (max-width: 768px) {
+    .fire, .grass, .water {
+        padding: 0 10px;
+  }
+    
+    #f, #w, #g {
+        width: 100px;
+        height: 100px;
+        transition: 0.3s;
+    }
+
+    .text-two {
+        margin-top: 10px;
+    }
+
+    .rules {
+        margin-top: 50px;
+    }
 }
